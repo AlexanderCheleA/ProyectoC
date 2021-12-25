@@ -55,8 +55,6 @@ void funinsertarNodoLD(int numero,nodo *&pcab,nodo *&pfin)
 		pfin->sig=nuevonodo;
 		pfin=nuevonodo;
 	}
-
-
 }
 void funmostrarLista(nodo *pcab)
 {
@@ -70,7 +68,6 @@ void funmostrarLista(nodo *pcab)
 		cout<<endl;
 		nodoactual=nodoactual->sig;
 	}
-	
 }
 
 int menu()
@@ -86,23 +83,18 @@ int menu()
 	cout<<"ingrese su respuesta:";cin>>respuesta;
 	return respuesta;
 }
-void operaciones(int &op,nodo *&pcab,nodo *&pfin)
-{
+
+void operaciones(int &op,nodo *&pcab,nodo *&pfin){
 	int numero,respuesta;
-	
-	switch (op)
-	{
+	switch (op){
 		case 1:
-			
-			do
-			{
+			do{
 				cout<<"ingrese un numero:";
 				cin>>numero;
 				funinsertarNodoLD(numero,pcab,pfin);
 				cout<<"desea ingresar otro numero si(1) no(otro valor):";
 				cin>>respuesta;	
 			}while(respuesta==1);
-			
 			break;
 		case 2:
 				cout<<"LISTA DE NODOS REGISTRADOS"<<endl;
@@ -119,43 +111,39 @@ void operaciones(int &op,nodo *&pcab,nodo *&pfin)
 			break;
 		case 5:
 			
-			break;	
-		
+			break;
 	}
-	
-	
 }
 
 
-void insertarAntes(nodo *&pcab)
-{
+void insertarAntes(nodo *&pcab){
 	int datobuscar,ndato;
-				cout<<"ingrese el dato a buscar :";
-				cin>>datobuscar;
-				cout<<"ingrese el dato a insertar :";
-				cin>>ndato;
-				nodo *nodoa=NULL;
-				
-				nodo *nuevonodo;
-				nodo *aux=buscarlista(datobuscar,pcab);
-				if(aux==NULL){
-					cout<<"El dato ingresado no existe"<<endl;
-				}else{
-					if(aux->num==datobuscar){
-						//se inserta antes de la cabecera
-						 nuevonodo=new(nodo);
-						 nuevonodo->num=ndato;
-						 nuevonodo->sig=aux;
-						 pcab=nuevonodo;
-					}else{
-						//insertar 
-						 nuevonodo=new(nodo);
-						 nuevonodo->num=ndato;
-						 nuevonodo->sig=aux->sig;
-						 aux->sig=nuevonodo;
-						 
-					}
-				}
+    cout<<"ingrese el dato a buscar :";
+    cin>>datobuscar;
+    cout<<"ingrese el dato a insertar :";
+    cin>>ndato;
+    nodo *nodoa=NULL;
+    
+    nodo *nuevonodo;
+    nodo *aux=buscarlista(datobuscar,pcab);
+    if(aux==NULL){
+        cout<<"El dato ingresado no existe"<<endl;
+    }else{
+        if(aux->num==datobuscar){
+            //se inserta antes de la cabecera
+                nuevonodo=new(nodo);
+                nuevonodo->num=ndato;
+                nuevonodo->sig=aux;
+                pcab=nuevonodo;
+        }else{
+            //insertar 
+                nuevonodo=new(nodo);
+                nuevonodo->num=ndato;
+                nuevonodo->sig=aux->sig;
+                aux->sig=nuevonodo;
+                
+        }
+    }
 	
 }
 nodo *buscarlista(int datobuscar,nodo *pcab)
