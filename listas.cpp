@@ -18,14 +18,13 @@ void operaciones(int &op,nodo *&pcab,nodo *&pfin);
 void insertarAntes(nodo *&pcab);
 nodo *buscarlista(int datobuscar,nodo *pcab);
 int menu();
-int main()
-{
+
+int main(){
 	nodo *pcab=NULL;
 	nodo *pfin=NULL;
 	int respuesta,op;
 	int numero;
-	do
-	{
+	do{
 		
 		op=menu();
 		operaciones(op,pcab,pfin);
