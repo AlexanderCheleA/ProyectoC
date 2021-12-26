@@ -3,8 +3,7 @@
 #include<stdio.h>
 
 using namespace std;
-struct nodo 
-{
+struct nodo {
 	int num;
 	nodo *sig;
 	nodo *ant;
