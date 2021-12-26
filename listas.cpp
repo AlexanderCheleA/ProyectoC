@@ -38,8 +38,7 @@ int main(){
   return 0;
 }
 
-void funinsertarNodoLD(int numero,nodo *&pcab,nodo *&pfin)
-{
+void funinsertarNodoLD(int numero,nodo *&pcab,nodo *&pfin){
 	nodo *nuevonodo;
 	nuevonodo=new(nodo);
 	nuevonodo->num=numero;
@@ -140,14 +139,12 @@ void insertarAntes(nodo *&pcab){
                 nuevonodo=new(nodo);
                 nuevonodo->num=ndato;
                 nuevonodo->sig=aux->sig;
-                aux->sig=nuevonodo;
-                
+                aux->sig=nuevonodo;           
         }
-    }
-	
+    }	
 }
-nodo *buscarlista(int datobuscar,nodo *pcab)
-{
+
+nodo *buscarlista(int datobuscar,nodo *pcab){
 	nodo *nodoActual=pcab;
 	nodo *direccion=NULL;
 	if(nodoActual!=NULL)
